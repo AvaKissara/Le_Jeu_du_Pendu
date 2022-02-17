@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Le pendu</title>
+		
+		<link rel="stylesheet" href="style.css">
+    </head>
+	
+    <body>
+		<div class="wrapper">
+			<h1 class="gameTitle">Le Pendu</h1>
+	
+
+			<form class="gameInterface">
+				<h4>Règles du Jeu :</h4> 
+
+				<p class="presentation">
+					&emsp;&emsp;Le joueur 1 saisit discrètement au clavier un mot d'un nombre quelconque de lettres.
+				</p>
+				<p class="presentation">
+					Le joueur 2 doit deviner ce mot en proposant des lettres une à une; il dispose de deux fois le nombre de lettre compsant le mot à trouver. La partie s’arrête quand le joueur 2 a deviné le mot entier, ou quand il n'a plus d'essai.
+				</p>
+							
+				<div class="sectionSaisie" id="zoneD">
+					<span class="tooltiptext">Joue avec Moi !</span>
+					<input type="text" id="mot-a-trouver" name="mot-a-trouver" class="saisieJoueur" placeholder="Saisir le mot à deviner" autofocus="" required="">								
+					<input type="button" id="bouton1" value="Débuter" class="button" ></button>
+				</div>
+
+				<div id="essai" class="presentation">			
+					
+				</div>
+			
+		
+				<div id="motADecouvrir" class="presentation">
+
+				</div>
+				
+				<div id="lettre-contenue" class="presentation">
+
+				</div>
+
+				<div id="msg-victoire" class="presentation">
+
+				</div>
+
+				<div id="msg-defaite" class="presentation">
+
+				</div>
+
+			</form>
+			<p id="test"></p>
+		
+			<script src="script.js"></script>
+		</div>
+    </body>
+</html>
