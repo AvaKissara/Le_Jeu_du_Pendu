@@ -16,14 +16,29 @@
 				<h4>Règles du Jeu :</h4> 
 
 				<p class="presentation">
-					&emsp;&emsp;Le joueur 1 saisit discrètement au clavier un mot d'un nombre quelconque de lettres.
+					&emsp;&emsp;Il y a deux joueurs, Gounter et Plectrude. Gounter saisit un mot dont chaque caractère apparaît crypté par une étoile et Plectrude devra le deviner.
+					
 				</p>
 				<p class="presentation">
-					Le joueur 2 doit deviner ce mot en proposant des lettres une à une; il dispose de deux fois le nombre de lettre compsant le mot à trouver. La partie s’arrête quand le joueur 2 a deviné le mot entier, ou quand il n'a plus d'essai.
+					Plectrude entre une lettre. La lettre fait-elle partie du mot à deviner ?
+					
+					Si oui, la lettre s'inscrit à sa place, sur l'étoile correspondante, et autant de fois que la lettre apparait dans le mot.
+				</p>
+				<p class="presentation">
+					Si non, un essai est retiré à Plectrude.
+					Le jeu continue jusqu’au moment où l’un des joueurs remporte la partie. C’est-à-dire :
+					
+					Plectrude remporte la partie en découvrant toutes les lettres du mot.
+					Gounter gagne la partie si le mot demeure introuvé à l'issue des essais de Plectrude.
+				</p>
+				<p class="presentation">
+					A savoir :
+
+					Le nombre de coups dans une partie dépend de la longueur du mot saisi par Gounter. Aussi, le nombre d'essais dont bénéfiera Plectrude s'élève à deux fois le nombre de lettres contenues dans le mot.
 				</p>
 							
 				<div class="sectionSaisie" id="zoneD">
-					<span class="tooltiptext">"Joue !"</span>
+					<span class="tooltiptext">Joue !</span>
 					<input type="text" id="mot-a-trouver" name="mot-a-trouver" class="saisieJoueur" placeholder="Saisir le mot à deviner" autofocus="" required="">								
 					<input type="button" id="bouton1" value="Débuter" class="button" >
 				</div>

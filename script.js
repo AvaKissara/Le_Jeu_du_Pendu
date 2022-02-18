@@ -50,6 +50,7 @@ function crypterMot()
 	else
 	{
 		saisieJoueur2 = motSaisi;
+		btn1.removeaddEventListener("click", crypterMot);
 		btn1.addEventListener("click", joueur2);
 	}
 	document.getElementById("mot-a-trouver").value = "";
@@ -65,9 +66,7 @@ function crypterMot()
 
 //Joueur 2//
 function joueur2() 
-{
-	
-	
+{	
 	if (motCache != motDecouvert && essaisRestants > 0) 
 	{
 		essai.innerHTML = "Vous avez droit à : " + essaisRestants + " essais.";
@@ -111,7 +110,6 @@ function joueur2()
 	else 
 	{
 		msgDefaite = "Perdu, le mot était : " + motCache + ". Tu as trouvé : " + lettreTrouvee + " lettres !";
-
 		
 	}
 	document.getElementById("mot-a-trouver").value = "";
