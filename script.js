@@ -4,6 +4,7 @@ var motADecouvrir = document.getElementById("motADecouvrir");
 var lettreContenu = document.getElementById("lettre-contenue");
 var msgVictoire = document.getElementById("msg-victoire");
 var msgDefaite = document.getElementById("msg-defaite");
+var zoneSaisi = document.getElementById("mot-a-trouver");
 var motRestant = "";
 var motDecouvert = "";
 var motCrypte = "";
@@ -17,13 +18,13 @@ var motSaisi = "";
 var essaisRestants = 0;
 
 
-
 //Joueur 1//
 function crypterMot()
 {
 	motSaisi = document.getElementById("mot-a-trouver").value;
 	
-	if(motSaisi.length > 1) {
+	if(motSaisi.length > 1) 
+	{
 		motCache = motSaisi;
 		longueur = motCache.length;
 		essaisRestants = longueur * 2;		
@@ -41,7 +42,8 @@ function crypterMot()
 		motADecouvrir.innerHTML = "Mot découvert : " + motCrypte;
 
 		btn1.value = "Proposez";
-		document.getElementById("mot-a-trouver").placeholder = "Saisir une lettre";
+		zoneSaisi.placeholder = "Saisir une lettre";
+		zoneSaisi.maxlength="1";
 
 		btn1.addEventListener("click", joueur2);
 	}	
@@ -51,12 +53,21 @@ function crypterMot()
 		btn1.addEventListener("click", joueur2);
 	}
 	document.getElementById("mot-a-trouver").value = "";
+	zoneSaisi.addEventListener("keypress", function(e) 
+	{
+		if (e.key==="Enter") 
+		{ 
+			btn1.click();
+		}
+	})
 }
 
 
 //Joueur 2//
 function joueur2() 
 {
+	
+	
 	if (motCache != motDecouvert && essaisRestants > 0) 
 	{
 		essai.innerHTML = "Vous avez droit à : " + essaisRestants + " essais.";
