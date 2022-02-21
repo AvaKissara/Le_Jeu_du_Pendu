@@ -18,6 +18,15 @@ var motSaisi = "";
 var essaisRestants = 0;
 
 
+
+zoneSaisi.addEventListener("keypress", function(e) 
+{
+	if (e.key==="Enter") 
+	{ 
+		btn1.click();
+	}
+})
+
 //Joueur 1//
 function crypterMot()
 {
@@ -50,31 +59,23 @@ function crypterMot()
 	else
 	{
 		saisieJoueur2 = motSaisi;
-		btn1.removeaddEventListener("click", crypterMot);
 		btn1.addEventListener("click", joueur2);
 	}
 	document.getElementById("mot-a-trouver").value = "";
-	zoneSaisi.addEventListener("keypress", function(e) 
-	{
-		if (e.key==="Enter") 
-		{ 
-			btn1.click();
-		}
-	})
 }
 
 
 //Joueur 2//
 function joueur2() 
 {	
-	if (motCache != motDecouvert && essaisRestants > 0) 
+	if (motCache != motDecouvert && essaisRestants > -1) 
 	{
 		essai.innerHTML = "Vous avez droit à : " + essaisRestants + " essais.";
 		
 		motADecouvrir.innerHTML = "Mot découvert : " + motCrypte;
 
 	
-		essaisRestants -= 1;
+		essaisRestants --;
 		tentative++;
 
 		var midstring;
@@ -87,7 +88,7 @@ function joueur2()
 				if (motCache.charAt(i) == saisieJoueur2)
 				{
 					midstring = " contient ";
-					motRestant = motDecouvert.substring(0, i) + saisieJoueur2 + motDecouvert.substring(i +1, longueur);
+					motRestant = motDecouvert.substring(0, i) + saisieJoueur2 + motDecouvert.substring(i+1, longueur);
 					motDecouvert = motRestant;
 					lettreTrouvee++;
 				}
@@ -107,7 +108,7 @@ function joueur2()
 		msgVictoire.innerHTML = "Félicitation champion ! Tu as gagné en : " + tentative + " tentatives !";
 
 	}
-	else 
+	else if (essaisRestants == -1)
 	{
 		msgDefaite = "Perdu, le mot était : " + motCache + ". Tu as trouvé : " + lettreTrouvee + " lettres !";
 		
@@ -118,7 +119,7 @@ function joueur2()
 
 
 
-///Start Pendu///
+///Start Pendu Solo///
 btn1.addEventListener("click", crypterMot);
 
 /*document.addEventListener("keydown", function(e) {	
@@ -126,4 +127,6 @@ btn1.addEventListener("click", crypterMot);
 	joueur2();
 });*/
 
-///End Pendu///
+///End Pendu Solo///
+
+
