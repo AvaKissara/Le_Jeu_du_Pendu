@@ -1,73 +1,20 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Le pendu</title>
-		
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
-    </head>
-	
-    <body>
+		<title>Le Pendu</title>
+	</head>
+
+	<body>
 		<div class="wrapper">
 			<h1 class="gameTitle">Le Pendu</h1>
-	
 
-			<form id="form_jeu" class="gameInterface">
-				<h4>Règles du Jeu :</h4> 
-
-				<p class="presentation">
-					&emsp;&emsp;Il y a deux joueurs, Gounter et Plectrude. Gounter saisit un mot dont chaque caractère apparaît crypté par une étoile et Plectrude devra le deviner.
-					
-				</p>
-				<p class="presentation">
-					Plectrude entre une lettre. La lettre fait-elle partie du mot à deviner ?
-					
-					Si oui, la lettre s'inscrit à sa place, sur l'étoile correspondante, et autant de fois que la lettre apparait dans le mot.
-				</p>
-				<p class="presentation">
-					Si non, un essai est retiré à Plectrude.
-					Le jeu continue jusqu’au moment où l’un des joueurs remporte la partie. C’est-à-dire :
-					
-					Plectrude remporte la partie en découvrant toutes les lettres du mot.
-					Gounter gagne la partie si le mot demeure introuvé à l'issue des essais de Plectrude.
-				</p>
-				<p class="presentation">
-					A savoir :
-
-					Le nombre de coups dans une partie dépend de la longueur du mot saisi par Gounter. Aussi, le nombre d'essais dont bénéfiera Plectrude s'élève à deux fois le nombre de lettres contenues dans le mot.
-				</p>
-							
-				<div class="sectionSaisie" id="zoneD">
-					<span class="tooltiptext">Joue !</span>
-					<input type="text" id="mot-a-trouver" name="mot-a-trouver" class="saisieJoueur" placeholder="Saisir le mot à deviner" autofocus="" required="">								
-					<input type="button" id="bouton1" value="Débuter" class="button">
-				</div>
-
-				<div id="essai" class="presentation">			
-					
-				</div>
-			
-		
-				<div id="motADecouvrir" class="presentation">
-
-				</div>
-				
-				<div id="lettre-contenue" class="presentation">
-
-				</div>
-
-				<div id="msg-victoire" class="presentation">
-
-				</div>
-
-				<div id="msg-defaite" class="presentation">
-
-				</div>
-
-			</form>
-			<p id="test"></p>
-		
-			<script src="script.js"></script>
-		</div>
-    </body>
+			<div class="container">
+				<a href="un-joueurs.html"><input type="button" id="button-j1" class="button-welcome" value="1 Joueur"></a>
+				<a href="deux-joueurs.html"><input type="button" class="button-welcome" value="2 Joueurs"></a>
+			</div>	
+		</div>		
+	</body>
 </html>

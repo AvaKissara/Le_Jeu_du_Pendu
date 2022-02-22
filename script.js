@@ -5,6 +5,7 @@ var lettreContenu = document.getElementById("lettre-contenue");
 var msgVictoire = document.getElementById("msg-victoire");
 var msgDefaite = document.getElementById("msg-defaite");
 var zoneSaisi = document.getElementById("mot-a-trouver");
+
 var motRestant = "";
 var motDecouvert = "";
 var motCrypte = "";
@@ -18,14 +19,15 @@ var motSaisi = "";
 var essaisRestants = 0;
 
 
-
-zoneSaisi.addEventListener("keypress", function(e) 
+zoneSaisi.addEventListener("keydown", function(e) 
 {
-	if (e.key==="Enter") 
+	if (e.key=="Enter") 
 	{ 
 		btn1.click();
 	}
 })
+
+
 
 //Joueur 1//
 function crypterMot()
@@ -68,15 +70,14 @@ function crypterMot()
 //Joueur 2//
 function joueur2() 
 {	
-	if (motCache != motDecouvert && essaisRestants > -1) 
+	if (motCache != motDecouvert && essaisRestants > 0) 
 	{
 		essai.innerHTML = "Vous avez droit à : " + essaisRestants + " essais.";
 		
 		motADecouvrir.innerHTML = "Mot découvert : " + motCrypte;
-
 	
-		essaisRestants --;
 		tentative++;
+		essaisRestants--;
 
 		var midstring;
 	
@@ -97,6 +98,7 @@ function joueur2()
 		else 
 		{
 			midstring = " ne contient pas ";
+			
 		}	
 		motADecouvrir.innerHTML = motDecouvert;
 		lettreContenu.innerHTML = "Le mot à découvrir" + midstring + "la lettre " + saisieJoueur2;
@@ -108,9 +110,9 @@ function joueur2()
 		msgVictoire.innerHTML = "Félicitation champion ! Tu as gagné en : " + tentative + " tentatives !";
 
 	}
-	else if (essaisRestants == -1)
+	else if (essaisRestants == 0)
 	{
-		msgDefaite = "Perdu, le mot était : " + motCache + ". Tu as trouvé : " + lettreTrouvee + " lettres !";
+		msgDefaite.innerHTML = "Perdu, le mot était : " + motCache + ". Tu as trouvé : " + lettreTrouvee + " lettres !";
 		
 	}
 	document.getElementById("mot-a-trouver").value = "";
@@ -119,8 +121,11 @@ function joueur2()
 
 
 
-///Start Pendu Solo///
+
+//Start Pendu 2 Joueurs//
 btn1.addEventListener("click", crypterMot);
+
+
 
 /*document.addEventListener("keydown", function(e) {	
 	inputlettreTest.value = e.key;

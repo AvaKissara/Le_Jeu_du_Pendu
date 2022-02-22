@@ -46,6 +46,8 @@ h4 {
 }
 
 .gameInterface {
+	display: flex;
+	flex-direction: column;	
 	margin: 0 auto;
 	width: 90%;
 	padding: 40px;
@@ -66,13 +68,22 @@ h4 {
 	text-align: justify;
 }
 
-.sectionSaisie{
-	padding-top: 45px;
+.last {
+	padding-bottom: 30px;
+}
+
+.dynamique {
+	margin: 0 auto;
+	padding-top: 25px;
+}
+
+.sectionSaisie {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .sectionSaisie .tooltiptext {
-	visibility: hidden;
-	width: 120px;
 	background-color: #555;
 	color: #fff;
 	text-align: center;
@@ -107,8 +118,8 @@ h4 {
 	margin-bottom: 25px;
 	font-weight: 500;
 	font-family: 'Montserrat', sans-serif;
-	width: 30%;
-	height: 18%;
+	width: 20%;
+	height: 10%;
 	line-height: 32px;
 	color: white;
 	text-align: center;
@@ -152,16 +163,16 @@ h4 {
 
 .saisieJoueur {
 	display: block;
-	width: 50%;
+	width: 30%;
 	height: 38px;
-	margin-top: 2px;
+	margin: 10px 0;
 	font-weight: 500;
 	font-size: 15px;
 	background: none;
 	border: 0;
 	border-bottom: 2px solid #274060 ;
 }
-.saisieJoueur1:focus {
+.saisieJoueur:focus {
 	border-color: #d7604b;
 	outline: 0;
 }
@@ -179,8 +190,18 @@ h4 {
 	padding-top: 35px;
 }
 
-.buttonWelcome {
+.button-welcome {
 	width: 300px;
 	height: 35px;
 }
 
+.choix-niveau {
+	display: flex;
+	justify-content: center;
+	visibility: visible;
+	padding-top: 20px;
+}
+
+.unj {
+	visibility: hidden;
+}
